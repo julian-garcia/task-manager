@@ -13,7 +13,7 @@
             <div class="col s12 m6 l3 valign-wrapper">
               <i class="material-icons">expand_more</i>
               <a class="waves-effect waves-light btn btn-small blue" href="{{url_for('edit_task', task_id=task._id)}}">Edit</a>
-              <a class="waves-effect waves-light btn btn-small">Done</a>
+              <a class="waves-effect waves-light btn btn-small" href="{{url_for('delete_task', task_id=task._id)}}">Done</a>
             </div>
             <div class="col s12 m6 l9 valign-wrapper">
               <strong>{{ task.task_name }}</strong>&nbsp;({{ task.category_name }}) - {{ task.due_date }}
@@ -23,4 +23,9 @@
       </li>
     {% endfor %}
   </ul>
+  <div class="row">
+    <div class="input-field col s12">
+      <a class="waves-effect waves-light btn" href="{{url_for('add_task')}}"><i class="material-icons right">add_circle</i>Add Task</a>
+    </div>
+  </div>
 {% endblock %}

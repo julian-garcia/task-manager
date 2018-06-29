@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+  <ul class="collapsible">
+    {% for category in categories %}
+      <li>
+        <div class="row collapsible-header task-collapsible">
+            <div class="col s12 m6 l3 valign-wrapper">
+              <a class="waves-effect waves-light btn btn-small blue" href="{{url_for('edit_category', category_id=category._id)}}">Edit</a>
+              <a class="waves-effect waves-light btn btn-small" href="{{url_for('delete_category', category_id=category._id)}}">Del</a>
+            </div>
+            <div class="col s12 m6 l9 valign-wrapper">
+              <strong>{{ category.category_name }}</strong>
+            </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="row">
+    <div class="input-field col s12">
+      <a class="waves-effect waves-light btn" href="{{url_for('add_category')}}"><i class="material-icons right">add_circle</i>Add Category</a>
+    </div>
+  </div>
+{% endblock %}

@@ -59,7 +59,7 @@
       <div class="row">
         <div class="input-field col s12">
           <button class="btn waves-effect waves-light" type="submit" name="action">Edit Task
-            <i class="material-icons right">add_circle</i>
+            <i class="material-icons right">edit</i>
           </button>
         </div>
       </div>
@@ -73,10 +73,6 @@
         defaultDate: due_date
         });
       M.Datepicker.getInstance(document.querySelector(".datepicker")).setDate(due_date);
-      // M.Datepicker.getInstance(document.querySelector(".datepicker")).gotoDate(due_date);
-
-      console.log(due_date);
-      // console.log(instance);
     });
   </script>
 {% endblock %}

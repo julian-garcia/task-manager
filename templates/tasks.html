@@ -9,7 +9,16 @@
            {{ task.is_urgent }}
            {{ task.due_date }} -->
       <li>
-        <div class="collapsible-header"><i class="material-icons">expand_more</i><strong>{{ task.task_name }}</strong> ({{ task.category_name }}) - {{ task.due_date }}</div>
+        <div class="row collapsible-header task-collapsible">
+            <div class="col s12 m6 l3 valign-wrapper">
+              <i class="material-icons">expand_more</i>
+              <a class="waves-effect waves-light btn btn-small blue" href="{{url_for('edit_task', task_id=task._id)}}">Edit</a>
+              <a class="waves-effect waves-light btn btn-small">Done</a>
+            </div>
+            <div class="col s12 m6 l9 valign-wrapper">
+              <strong>{{ task.task_name }}</strong>&nbsp;({{ task.category_name }}) - {{ task.due_date }}
+            </div>
+        </div>
         <div class="collapsible-body"><span>{{ task.task_description }}</span></div>
       </li>
     {% endfor %}
